@@ -5,6 +5,12 @@ public abstract class Coffee {
     private float price;
     private String storeName;
 
+    protected Coffee(String type, float price, String storeName) {
+        this.type = type;
+        this.price = price;
+        this.storeName = storeName;
+    }
+
     // protected abstract String getType();
     // protected abstract float getPrice();
     // protected abstract String getStoreName();
