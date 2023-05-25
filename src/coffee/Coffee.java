@@ -1,11 +1,12 @@
 package coffee;
 
 public abstract class Coffee {
-    private static String type;
+    private String type;
     private double price;
     private String storeName;
 
-    protected Coffee(double price, String storeName) {
+    protected Coffee(String type, double price, String storeName) {
+        this.type = type;
         this.price = price;
         this.storeName = storeName;
     }
@@ -21,11 +22,12 @@ public abstract class Coffee {
     protected void setPrice(double price) {
         this.price = price;
     }
+    
     protected void setStoreName(String storeName) {
         this.storeName = storeName;
     }
 
-    protected abstract void ingredient(String ingredients);
+    protected abstract String ingredient();
     protected abstract void howToMakeCoffee();
     protected abstract void prepare();
 }

@@ -1,33 +1,29 @@
 package coffee;
 
 public class WhiteChocolateMocha extends Coffee {
-    private static final String type = "White Chocolate Mocha";
-    private static final String chocolateType = "White Chocolate";
+    private String chocolateType = "White Chocolate";
     private String ingredients;
 
-    public WhiteChocolateMocha(double price, String storeName, String ingredients) {
-        super(price, storeName);
+    public WhiteChocolateMocha(String ingredients) {
+        super("White Chocolate Mocha", 6.5, "Starppops");
         this.ingredients = ingredients;
     }
 
-    // These override methods are the same for each derived class
-    // This simply shows how overriding works
-
-    // Functions as a setter
+    // Functions as a getter
     @Override
-    protected void ingredient(String ingredients) {
-        this.ingredients = ingredients;
+    protected String ingredient() {
+        return ingredients;
     }
 
     @Override
     protected void howToMakeCoffee() {
-        System.out.println("To make a " + type + ", use the following ingredients:");
-        System.out.println(ingredients);
+        System.out.println("To make a " + getType() + ", use the following ingredients:");
+        System.out.println(chocolateType + ", " + ingredients);
     }
 
     @Override
     public void prepare() {
-        System.out.println(type);
+        System.out.println(getType());
         System.out.println(ingredients);
     }
 }
