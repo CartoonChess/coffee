@@ -1,10 +1,11 @@
 package coffee;
 
 public class PeppermintMocha extends Coffee {
+    private String type = "Peppermint Mocha";
     private int peppermintSyrupAmount;
 
-    public PeppermintMocha(String type, float price, String storeName, int peppermintSyrupAmount) {
-        super(type, price, storeName);
+    public PeppermintMocha(float price, String storeName, int peppermintSyrupAmount) {
+        super(price, storeName);
         this.peppermintSyrupAmount = peppermintSyrupAmount;
     }
 

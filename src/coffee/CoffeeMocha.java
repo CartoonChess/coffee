@@ -1,8 +1,10 @@
 package coffee;
 
 public class CoffeeMocha extends Coffee {
-    public CoffeeMocha(String type, float price, String storeName) {
-        super(type, price, storeName);
+    private String type = "Coffee Mocha";
+
+    public CoffeeMocha(float price, String storeName) {
+        super(price, storeName);
     }
 
     @Override
