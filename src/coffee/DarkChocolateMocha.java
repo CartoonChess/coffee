@@ -1,28 +1,29 @@
 package coffee;
 
 public class DarkChocolateMocha extends Coffee {
-    private String type = "Dark Chocolate Mocha";
-    private String chocolateType = "Dark Chocolate";
+    private static final String type = "Dark Chocolate Mocha";
+    private static final String chocolateType = "Dark Chocolate";
+    private String ingredients;
 
-    public DarkChocolateMocha(float price, String storeName) {
+    public DarkChocolateMocha(float price, String storeName, String ingredients) {
         super(price, storeName);
+        this.ingredients = ingredients;
     }
 
     @Override
-    protected void ingredient() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'ingredient'");
+    protected void ingredient(String ingredients) {
+        this.ingredients = ingredients;
     }
 
     @Override
     protected void howToMakeCoffee() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'howToMakeCoffee'");
+        System.out.println("To make a " + type + ", use the following ingredients:");
+        System.out.println(ingredients);
     }
 
     @Override
-    protected void prepare() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'prepare'");
+    public void prepare() {
+        System.out.println(type);
+        System.out.println(ingredients);
     }
 }

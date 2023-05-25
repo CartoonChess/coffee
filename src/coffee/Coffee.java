@@ -1,7 +1,7 @@
 package coffee;
 
 public abstract class Coffee {
-    private String type;
+    private static String type;
     private float price;
     private String storeName;
 
@@ -25,7 +25,7 @@ public abstract class Coffee {
         this.storeName = storeName;
     }
 
-    protected abstract void ingredient();
+    protected abstract void ingredient(String ingredients);
     protected abstract void howToMakeCoffee();
     protected abstract void prepare();
 }
