@@ -10,14 +10,6 @@ public class PeppermintMocha extends Coffee {
         this.peppermintSyrupAmount = peppermintSyrupAmount;
     }
 
-    public int getPeppermintSyrupAmount() {
-        return peppermintSyrupAmount;
-    }
-
-    public void setPeppermintSyrupAmount(int amount) {
-        peppermintSyrupAmount = amount;
-    }
-
     @Override
     protected String ingredient() {
         return ingredients;
@@ -33,5 +25,13 @@ public class PeppermintMocha extends Coffee {
     public void prepare() {
         System.out.println(getType());
         System.out.println(ingredients);
+    }
+
+    public int getPeppermintSyrupAmount() {
+        return peppermintSyrupAmount;
+    }
+
+    public void setPeppermintSyrupAmount(int amount) {
+        peppermintSyrupAmount = amount;
     }
 }

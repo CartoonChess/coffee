@@ -25,6 +25,39 @@ public class App {
         return input.next();
     }
 
+    private static void runTests() {
+        // Test four constructors
+        WhiteChocolateMocha wcMocha = new WhiteChocolateMocha("wc ingredients");
+        DarkChocolateMocha dcMocha = new DarkChocolateMocha("dc ingredients");
+        CoffeeMocha cMocha = new CoffeeMocha("c ingredients");
+        PeppermintMocha pMocha = new PeppermintMocha("p ingredients", 1);
+
+        // Test inhereted setters
+        wcMocha.setType("New White Chocolate Mocha");
+        wcMocha.setPrice(99.99);
+        wcMocha.setStoreName("Dunking Doughnuts");
+
+        // Test inhereted getters
+        System.out.println(wcMocha.getType());
+        System.out.println(wcMocha.getPrice());
+        System.out.println(wcMocha.getStoreName());
+        System.out.println();
+
+        // Test PeppermintMocha special setter/getter
+        pMocha.setPeppermintSyrupAmount(2);
+        System.out.println(pMocha.getPeppermintSyrupAmount());
+        System.out.println();
+
+        // Test overridden methods in all classes
+        Coffee[] coffees = {wcMocha, dcMocha, cMocha, pMocha};
+        for (Coffee coffee : coffees) {
+            System.out.println(coffee.ingredient());
+            coffee.howToMakeCoffee();
+            coffee.prepare();
+            System.out.println();
+        }
+    }
+
     public static void main(String[] args)  {
         // The delimeter allows spaces in user input
         input = new Scanner(System.in).useDelimiter("\n");
@@ -37,14 +70,14 @@ public class App {
 
         while (true) {
             // Main menu
-            System.out.println();
             System.out.println("The following options are available:");
             System.out.println("1. Create White Chocolate Mocha");
             System.out.println("2. Create Dark Chocolate Mocha");
             System.out.println("3. Create Coffee Mocha");
             System.out.println("4. Create Peppermint Mocha");
             System.out.println("5. Print Created Drinks");
-            System.out.println("6. Exit");
+            System.out.println("6. Run Tests");
+            System.out.println("7. Exit");
             System.out.println();
 
             int option = getIntFromPrompt("Enter a number to choose an option: ");
@@ -80,12 +113,16 @@ public class App {
                     }
                     break;
                 case 6:
+                    runTests();
+                    break;
+                case 7:
                     System.out.print("Goodbye!");
                     System.exit(0);
                     break;
                 default:
                     System.out.println("Invalid input. Please try again.");
             }
+            System.out.println();
         }
     }
 }
