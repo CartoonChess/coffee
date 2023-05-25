@@ -1,14 +1,11 @@
 package coffee;
 
 public class PeppermintMocha extends Coffee {
-    private static final String type = "Peppermint Mocha";
-    private static final double price = 6.0;
-    private static final String storeName = "Starppops";
-    private int peppermintSyrupAmount;
     private String ingredients;
+    private int peppermintSyrupAmount;
 
     public PeppermintMocha(String ingredients, int peppermintSyrupAmount) {
-        super(type, price, storeName);
+        super("Peppermint Mocha", 6.0, "Starppops");
         this.ingredients = ingredients;
         this.peppermintSyrupAmount = peppermintSyrupAmount;
     }
@@ -28,13 +25,13 @@ public class PeppermintMocha extends Coffee {
 
     @Override
     protected void howToMakeCoffee() {
-        System.out.println("To make a " + type + ", use the following ingredients:");
+        System.out.println("To make a " + getType() + ", use the following ingredients:");
         System.out.println(peppermintSyrupAmount + "pump(s) of peppermint syrup, " + ingredients);
     }
 
     @Override
     public void prepare() {
-        System.out.println(type);
+        System.out.println(getType());
         System.out.println(ingredients);
     }
 }

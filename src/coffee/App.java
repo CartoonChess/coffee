@@ -20,6 +20,11 @@ public class App {
         }
     }
 
+    private static String inputIngredients() {
+        System.out.print("Enter ingredients: ");
+        return input.next();
+    }
+
     public static void main(String[] args)  {
         // The delimeter allows spaces in user input
         input = new Scanner(System.in).useDelimiter("\n");
@@ -32,6 +37,7 @@ public class App {
 
         while (true) {
             // Main menu
+            System.out.println();
             System.out.println("The following options are available:");
             System.out.println("1. Create White Chocolate Mocha");
             System.out.println("2. Create Dark Chocolate Mocha");
@@ -46,15 +52,21 @@ public class App {
 
             switch(option) {
                 case 1:
-                    System.out.print("Enter ingredients: ");
-                    ingredients = input.next();
+                    ingredients = inputIngredients();
                     coffees.add(new WhiteChocolateMocha(ingredients));
                     break;
                 case 2:
+                    ingredients = inputIngredients();
+                    coffees.add(new DarkChocolateMocha(ingredients));
                     break;
                 case 3:
+                    ingredients = inputIngredients();
+                    coffees.add(new CoffeeMocha(ingredients));
                     break;
                 case 4:
+                    ingredients = inputIngredients();
+                    int pumps = getIntFromPrompt("Enter number of syrup pumps: ");
+                    coffees.add(new PeppermintMocha(ingredients, pumps));
                     break;
                 case 5:
                     if (coffees.isEmpty()) {

@@ -1,13 +1,10 @@
 package coffee;
 
 public class CoffeeMocha extends Coffee {
-    private static final String type = "Coffee Mocha";
-    private static final double price = 4.0;
-    private static final String storeName = "Starppops";
     private String ingredients;
 
     public CoffeeMocha(String ingredients) {
-        super(type, price, storeName);
+        super("Coffee Mocha", 4.0, "Starppops");
         this.ingredients = ingredients;
     }
 
@@ -18,13 +15,13 @@ public class CoffeeMocha extends Coffee {
 
     @Override
     protected void howToMakeCoffee() {
-        System.out.println("To make a " + type + ", use the following ingredients:");
+        System.out.println("To make a " + getType() + ", use the following ingredients:");
         System.out.println(ingredients);
     }
 
     @Override
     public void prepare() {
-        System.out.println(type);
+        System.out.println(getType());
         System.out.println(ingredients);
     }
 }
