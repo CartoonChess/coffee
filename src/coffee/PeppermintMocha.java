@@ -5,7 +5,7 @@ public class PeppermintMocha extends Coffee {
     private int peppermintSyrupAmount = 1;
     private String ingredients;
 
-    public PeppermintMocha(float price, String storeName, String ingredients, int peppermintSyrupAmount) {
+    public PeppermintMocha(double price, String storeName, String ingredients, int peppermintSyrupAmount) {
         super(price, storeName);
         this.ingredients = ingredients;
         this.peppermintSyrupAmount = peppermintSyrupAmount;

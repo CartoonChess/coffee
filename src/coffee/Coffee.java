@@ -2,23 +2,23 @@ package coffee;
 
 public abstract class Coffee {
     private static String type;
-    private float price;
+    private double price;
     private String storeName;
 
-    protected Coffee(float price, String storeName) {
+    protected Coffee(double price, String storeName) {
         this.price = price;
         this.storeName = storeName;
     }
 
     protected String getType() { return type; }
-    protected float getPrice() { return price; }
+    protected double getPrice() { return price; }
     protected String getStoreName() { return storeName; }
 
     protected void setType(String type) {
         this.type = type;
     }
 
-    protected void setPrice(float price) {
+    protected void setPrice(double price) {
         this.price = price;
     }
     protected void setStoreName(String storeName) {

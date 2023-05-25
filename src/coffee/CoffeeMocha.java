@@ -4,7 +4,7 @@ public class CoffeeMocha extends Coffee {
     private static final String type = "Coffee Mocha";
     private String ingredients;
 
-    public CoffeeMocha(float price, String storeName, String ingredients) {
+    public CoffeeMocha(double price, String storeName, String ingredients) {
         super(price, storeName);
         this.ingredients = ingredients;
     }
