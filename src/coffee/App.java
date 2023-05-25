@@ -1,6 +1,7 @@
 package coffee;
 
 import java.util.Scanner;
+import java.util.ArrayList;
 
 public class App {
     private static Scanner input;
@@ -19,23 +20,15 @@ public class App {
         }
     }
 
-    // Make sure the user enters a double
-    private static double getDoubleFromPrompt(String prompt) {
-        while (true) {
-            System.out.print(prompt);
-            String userInput = input.next();
-    
-            try {
-                return Double.parseDouble(userInput);
-            } catch (Exception err) {
-                System.out.print("Make sure you enter a number. ");
-            }   
-        }
-    }
-
     public static void main(String[] args)  {
         // The delimeter allows spaces in user input
         input = new Scanner(System.in).useDelimiter("\n");
+
+        // Holds any coffees created
+        ArrayList<Coffee> coffees = new ArrayList<>();
+
+        // To be replaced each time user creates a new drink
+        String ingredients;
 
         while (true) {
             // Main menu
@@ -53,12 +46,9 @@ public class App {
 
             switch(option) {
                 case 1:
-                    double price = getDoubleFromPrompt("Enter price: ");
-                    System.out.print("Enter store name: ");
-                    String storeName = input.next();
                     System.out.print("Enter ingredients: ");
-                    String ingredients = input.next();
-                    WhiteChocolateMocha coffee = new WhiteChocolateMocha(price, storeName, ingredients);
+                    ingredients = input.next();
+                    coffees.add(new WhiteChocolateMocha(ingredients));
                     break;
                 case 2:
                     break;
@@ -67,18 +57,23 @@ public class App {
                 case 4:
                     break;
                 case 5:
-                    
+                    if (coffees.isEmpty()) {
+                        System.out.println("No drinks have been created.");
+                        break;
+                    }
+                    for (Coffee coffee : coffees) {
+                        System.out.println(coffee.getType());
+                        System.out.println(coffee.ingredient());
+                        System.out.println();
+                    }
                     break;
                 case 6:
                     System.out.print("Goodbye!");
                     System.exit(0);
+                    break;
                 default:
                     System.out.println("Invalid input. Please try again.");
             }
-            
-            // TODO: Remove
-            System.out.print("");
-            System.out.println("");
         }
     }
 }
