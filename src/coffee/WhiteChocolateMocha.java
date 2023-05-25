@@ -18,7 +18,7 @@ public class WhiteChocolateMocha extends Coffee {
     }
 
     @Override
-    protected void prepare() {
-        // TODO: Auto-generated method stub
+    public void prepare() {
+        System.out.println("White Chocolate Mocha");
     }
 }
